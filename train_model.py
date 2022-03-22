@@ -86,7 +86,7 @@ def train_model(user_id, user_file_dir, **db_args):   #输入用户名, 被测�
                 'SNP_info': Dict_OR, 'num_SNP_in_GWAS': num_SNP_in_GWAS, 'num_SNP_matched': num_SNP_matched}, ignore_index=True)
 
     # 3. 输出生成报告所需文件
-    Report_data.to_excel('output_data/report_data/'+ 'report_data' + user_id + '.xlsx',index=False)
+    #Report_data.to_excel('output_data/report_data/'+ 'report_data' + user_id + '.xlsx',index=False)
 
 
 

@@ -20,7 +20,7 @@ def Method2_SC(Dict, df_user, user_rs_index):
     for rs in Dict:
         risk_max += len(Dict[rs])
     risk_max=risk_max*2
-    #print('risk_max   ',risk_max)
+    print('SC算法的 risk_max ：   ',risk_max)
 
     #计算分数
     risk_score=0

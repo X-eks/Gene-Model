@@ -13,11 +13,23 @@ def get_SNPs_Matched(snp_Results, df_user):
     matched_rs = [] #记录匹配上的SNP
 
     start=datetime.datetime.now()
+
+    # for rs in unique_rs_in_DB:
+    #     for index, row in df_user.iterrows():
+    #         if rs==row['rs_ID']:
+    #             matched_rs.append(rs)
+    #             user_rs_index.append(index)
+
+    list_user_rs = df_user['rs_ID'].tolist()
     for rs in unique_rs_in_DB:
-        for index, row in df_user.iterrows():
-            if rs==row['rs_ID']:
-                matched_rs.append(rs)
-                user_rs_index.append(index)
+        try:
+            index_i = list_user_rs.index(rs)
+            matched_rs.append(rs)
+            user_rs_index.append(index_i)
+        except Exception:
+            continue
+
+
     end=datetime.datetime.now()
     print('匹配所花费时间: %s Seconds'%(end-start))
     num_SNP_matched = len(matched_rs)

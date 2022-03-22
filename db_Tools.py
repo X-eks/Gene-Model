@@ -28,7 +28,8 @@ def find_risk_SNPs(disease_EN, **db_args):
     try:
         db = pymysql.connect(**db_args)
         cursor = db.cursor()
-        sql = "SELECT risk_Allele, OddsRatio, MAF  FROM SNP WHERE disease_EN = '" + disease_EN +"'" + 'order by risk_Allele'
+        sql = "SELECT risk_Allele, OddsRatio, MAF  FROM SNP WHERE disease_EN = '" + disease_EN.replace("'", "\\'") + "' order by risk_Allele"
+        print(sql)
         cursor.execute(sql)  #返回的是查询到的个数，是个int类型的数字      
         snp_Results = cursor.fetchall()
         db.close()
