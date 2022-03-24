@@ -7,8 +7,8 @@ import train_model
 if __name__ == '__main__':
 
     #数据库配置文件
-    db_args = {'host': "localhost", 'user': "root", 'password': "root",\
-         'database':"disease",  'charset' : 'utf8'}
+    db_args = {'host': "47.107.250.206", 'user': "genemodel", 'password': "123456",\
+         'database':"genemodel",  'charset' : 'utf8'}
 
     ## 循环运行文件
     for i in range(2,21):
